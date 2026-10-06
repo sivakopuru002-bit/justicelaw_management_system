@@ -1,0 +1,555 @@
+/* ================= BASIC RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f6f1;
+    color: #222;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: #d4af37;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 8%;
+
+    background:
+        linear-gradient(
+            rgba(10, 20, 30, 0.75),
+            rgba(10, 20, 30, 0.85)
+        ),
+        url("https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 700px;
+    color: white;
+
+    animation: slideUp 1.2s ease;
+}
+
+.small-title,
+.section-title {
+    color: #d4af37;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span,
+.heading h2 span,
+.about-content h2 span,
+.contact h2 span {
+    color: #d4af37;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    margin-top: 35px;
+
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 15px 28px;
+
+    text-decoration: none;
+
+    background: #d4af37;
+    color: #111;
+
+    font-weight: bold;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: white;
+}
+
+.second-btn {
+    background: transparent;
+    border: 1px solid #d4af37;
+    color: white;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+    padding: 100px 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+
+    box-shadow: 20px 20px 0 #d4af37;
+
+    transition: 0.5s;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+}
+
+.about-content h2 {
+    font-size: 45px;
+    margin-bottom: 25px;
+}
+
+.about-content > p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.about-box {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.about-box div {
+    border-left: 3px solid #d4af37;
+    padding-left: 15px;
+}
+
+.about-box h3 {
+    font-size: 30px;
+}
+
+.about-box p {
+    color: #777;
+}
+
+
+/* ================= SERVICES ================= */
+
+.services {
+    padding: 100px 5%;
+
+    background: #111923;
+    color: white;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.heading h2 {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.heading > p:last-child {
+    color: #aaa;
+}
+
+
+.service-container {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.service-card {
+    padding: 35px 25px;
+
+    background: #182432;
+
+    border-bottom: 3px solid #d4af37;
+
+    transition: 0.4s;
+}
+
+.service-card:hover {
+    transform: translateY(-12px);
+
+    background: #202f40;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-card a {
+    text-decoration: none;
+    color: #d4af37;
+}
+
+
+/* ================= LAWYER GALLERY ================= */
+
+.lawyer-gallery {
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: max-content;
+
+    gap: 25px;
+
+    animation: scroll 25s linear infinite;
+}
+
+.lawyer-card {
+    width: 280px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.lawyer-card:hover {
+    transform: translateY(-10px);
+}
+
+.lawyer-card img {
+    width: 280px;
+    height: 350px;
+
+    object-fit: cover;
+}
+
+.lawyer-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.lawyer-info h3 {
+    margin-bottom: 8px;
+}
+
+.lawyer-info p {
+    color: #d4af37;
+}
+
+
+/* ================= IMAGE SCROLL ANIMATION ================= */
+
+@keyframes scroll {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    padding: 100px 8%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    background: #111923;
+
+    color: white;
+}
+
+.contact h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.contact-content > p {
+    line-height: 1.7;
+    color: #bbb;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details p {
+    margin-bottom: 15px;
+}
+
+
+/* ================= FORM ================= */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 16px;
+
+    border: none;
+    outline: none;
+
+    background: #202d3c;
+
+    color: white;
+
+    font-size: 16px;
+
+    border-bottom: 2px solid transparent;
+
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom-color: #d4af37;
+}
+
+.contact-form button {
+    padding: 16px;
+
+    border: none;
+
+    background: #d4af37;
+
+    color: #111;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: white;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #080d12;
+
+    color: #aaa;
+}
+
+.footer-logo {
+    color: #d4af37;
+    font-size: 20px;
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= ANIMATION ================= */
+
+@keyframes slideUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about,
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about-content h2,
+    .heading h2,
+    .contact h2 {
+        font-size: 35px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-box {
+        flex-wrap: wrap;
+    }
+
+}
